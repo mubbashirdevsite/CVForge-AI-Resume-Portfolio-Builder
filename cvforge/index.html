@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVForge AI — Resume & Portfolio Builder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ====== SIDEBAR ====== -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sidebar-logo">
+        <div class="logo-icon">✦</div>
+        <span class="logo-text">CVForge<span class="accent">AI</span></span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-page="dashboard">
+          <span class="nav-icon">⊞</span>
+          <span class="nav-label">Dashboard</span>
+        </button>
+        <button class="nav-btn" data-page="resume">
+          <span class="nav-icon">◈</span>
+          <span class="nav-label">Resume Builder</span>
+        </button>
+        <button class="nav-btn" data-page="portfolio">
+          <span class="nav-icon">◉</span>
+          <span class="nav-label">Portfolio</span>
+        </button>
+        <button class="nav-btn" data-page="templates">
+          <span class="nav-icon">▦</span>
+          <span class="nav-label">Templates</span>
+        </button>
+        <button class="nav-btn" data-page="ai">
+          <span class="nav-icon">✦</span>
+          <span class="nav-label">AI Tools</span>
+        </button>
+        <button class="nav-btn" data-page="export">
+          <span class="nav-icon">↗</span>
+          <span class="nav-label">Export</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-avatar">A</div>
+        <div class="user-info">
+          <div class="user-name">Ahmed K.</div>
+          <div class="user-plan">Pro Plan</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ====== MAIN AREA ====== -->
+    <div class="main-area">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <span class="page-title" id="pageTitle">Dashboard</span>
+        </div>
+        <div class="topbar-right">
+          <button class="theme-toggle" id="themeToggle">☀ Light</button>
+          <div class="topbar-avatar">A</div>
+        </div>
+      </header>
+
+      <!-- ====== PAGES ====== -->
+      <main class="content">
+
+        <!-- DASHBOARD PAGE -->
+        <section class="page active" id="page-dashboard">
+          <div class="page-header">
+            <h1>Welcome back, Ahmed 👋</h1>
+            <p class="text-muted">Your career profile is looking great. Keep building.</p>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon accent-purple">◈</div>
+              <div class="stat-value">3</div>
+              <div class="stat-label">Resumes Created</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon accent-green">↓</div>
+              <div class="stat-value">12</div>
+              <div class="stat-label">Downloads</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon accent-amber">◉</div>
+              <div class="stat-value">248</div>
+              <div class="stat-label">Portfolio Views</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon accent-red">✦</div>
+              <div class="stat-value">87%</div>
+              <div class="stat-label">ATS Score</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2>Saved Resumes</h2>
+              <button class="btn btn-primary" data-goto="resume">+ New Resume</button>
+            </div>
+            <div class="resumes-grid">
+              <div class="resume-card">
+                <div class="resume-icon">◈</div>
+                <div class="resume-name">Software Engineer CV</div>
+                <div class="resume-date text-muted">Updated 2 days ago</div>
+                <div class="resume-actions">
+                  <button class="btn btn-ghost">Edit</button>
+                  <button class="btn btn-primary">Download</button>
+                </div>
+              </div>
+              <div class="resume-card">
+                <div class="resume-icon">◈</div>
+                <div class="resume-name">Full Stack Developer</div>
+                <div class="resume-date text-muted">Updated 4 days ago</div>
+                <div class="resume-actions">
+                  <button class="btn btn-ghost">Edit</button>
+                  <button class="btn btn-primary">Download</button>
+                </div>
+              </div>
+              <div class="resume-card">
+                <div class="resume-icon">◈</div>
+                <div class="resume-name">Frontend Specialist</div>
+                <div class="resume-date text-muted">Updated 1 week ago</div>
+                <div class="resume-actions">
+                  <button class="btn btn-ghost">Edit</button>
+                  <button class="btn btn-primary">Download</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Quick Actions</h2>
+            <div class="quick-actions">
+              <button class="quick-btn purple" data-goto="ai">
+                <span>✦</span>AI Summary
+              </button>
+              <button class="quick-btn amber" data-goto="templates">
+                <span>▦</span>Pick Template
+              </button>
+              <button class="quick-btn green" data-goto="portfolio">
+                <span>◉</span>View Portfolio
+              </button>
+              <button class="quick-btn red" data-goto="export">
+                <span>↗</span>Export PDF
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- RESUME BUILDER PAGE -->
+        <section class="page" id="page-resume">
+          <h2 class="page-heading">Resume Builder</h2>
+          <div class="resume-layout">
+
+            <div class="resume-form">
+
+              <!-- Personal Info -->
+              <div class="card form-section">
+                <h3 class="section-title">Personal Information</h3>
+                <div class="form-grid">
+                  <div class="form-group"><label>Full Name</label><input type="text" placeholder="Ahmed Khan" /></div>
+                  <div class="form-group"><label>Email</label><input type="email" placeholder="ahmed@email.com" /></div>
+                  <div class="form-group"><label>Phone</label><input type="tel" placeholder="+92 300 1234567" /></div>
+                  <div class="form-group"><label>Location</label><input type="text" placeholder="Karachi, Pakistan" /></div>
+                  <div class="form-group"><label>LinkedIn</label><input type="text" placeholder="linkedin.com/in/ahmedkhan" /></div>
+                  <div class="form-group"><label>GitHub</label><input type="text" placeholder="github.com/ahmedkhan" /></div>
+                </div>
+              </div>
+
+              <!-- Summary -->
+              <div class="card form-section">
+                <h3 class="section-title">Professional Summary</h3>
+                <textarea id="summaryText" rows="4" placeholder="Write your professional summary or use AI to generate one..."></textarea>
+                <button class="btn btn-ai" id="genSummaryBtn">✦ Generate with AI</button>
+              </div>
+
+              <!-- Work Experience -->
+              <div class="card form-section">
+                <h3 class="section-title">Work Experience</h3>
+                <div class="form-grid">
+                  <div class="form-group"><label>Job Title</label><input type="text" placeholder="Senior Frontend Developer" /></div>
+                  <div class="form-group"><label>Company</label><input type="text" placeholder="TechCorp Ltd" /></div>
+                  <div class="form-group"><label>Duration</label><input type="text" placeholder="Jan 2022 – Present" /></div>
+                  <div class="form-group"><label>Location</label><input type="text" placeholder="Karachi, PK" /></div>
+                  <div class="form-group full-width"><label>Description</label><textarea rows="3" placeholder="Describe your responsibilities and achievements..."></textarea></div>
+                </div>
+              </div>
+
+              <!-- Education -->
+              <div class="card form-section">
+                <h3 class="section-title">Education</h3>
+                <div class="form-grid">
+                  <div class="form-group"><label>Degree</label><input type="text" placeholder="BS Computer Science" /></div>
+                  <div class="form-group"><label>University</label><input type="text" placeholder="FAST NUCES" /></div>
+                  <div class="form-group"><label>Year</label><input type="text" placeholder="2016 – 2020" /></div>
+                  <div class="form-group"><label>CGPA</label><input type="text" placeholder="3.7 / 4.0" /></div>
+                </div>
+              </div>
+
+              <!-- Skills -->
+              <div class="card form-section">
+                <h3 class="section-title">Skills</h3>
+                <div class="skills-tags" id="skillsTags"></div>
+                <p class="text-muted small">AI Suggested:</p>
+                <div class="skills-suggestions" id="skillsSuggestions"></div>
+              </div>
+
+              <!-- Certifications -->
+              <div class="card form-section">
+                <h3 class="section-title">Certifications</h3>
+                <div class="form-grid">
+                  <div class="form-group"><label>Certificate Name</label><input type="text" placeholder="AWS Solutions Architect" /></div>
+                  <div class="form-group"><label>Issuer</label><input type="text" placeholder="Amazon Web Services" /></div>
+                  <div class="form-group"><label>Year</label><input type="text" placeholder="2023" /></div>
+                </div>
+              </div>
+
+              <!-- Languages -->
+              <div class="card form-section">
+                <h3 class="section-title">Languages</h3>
+                <div class="form-grid">
+                  <div class="form-group"><label>Languages</label><input type="text" placeholder="Urdu (Native), English (Fluent)" /></div>
+                  <div class="form-group"><label>Others</label><input type="text" placeholder="Arabic (Basic)" /></div>
+                </div>
+              </div>
+
+              <!-- Projects -->
+              <div class="card form-section">
+                <div class="card-header">
+                  <h3 class="section-title" style="margin:0">Projects</h3>
+                  <button class="btn btn-dashed">+ Add Project</button>
+                </div>
+                <div class="project-item">
+                  <div class="project-name">E-Commerce Platform</div>
+                  <div class="project-tech text-muted">React, Node, MongoDB</div>
+                  <div class="project-link accent-purple">github.com/project</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Live Preview -->
+            <div class="preview-panel">
+              <div class="card preview-card">
+                <div class="preview-header">
+                  <span>Live Preview</span>
+                  <span class="live-badge">● Live</span>
+                </div>
+                <div class="preview-body" id="livePreview">
+                  <div class="cv-preview">
+                    <div class="cv-top-bar"></div>
+                    <h2 class="cv-name">Ahmed Khan</h2>
+                    <div class="cv-contact">ahmed@email.com · +92 300 1234567 · Karachi, PK</div>
+                    <div class="cv-summary" id="previewSummary">Your professional summary will appear here...</div>
+                    <div class="cv-section-title">Experience</div>
+                    <div class="cv-job-title">Senior Frontend Developer</div>
+                    <div class="cv-job-meta">TechCorp Ltd · 2022 – Present</div>
+                    <div class="cv-section-title" style="margin-top:12px">Skills</div>
+                    <div class="cv-skills" id="previewSkills"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- TEMPLATES PAGE -->
+        <section class="page" id="page-templates">
+          <h2 class="page-heading">Resume Templates</h2>
+          <p class="text-muted">Choose a template that matches your style and industry.</p>
+
+          <div class="templates-grid">
+            <div class="template-card selected" data-id="1">
+              <div class="template-preview" style="background:#0f0f1a">
+                <div class="tpl-mock">
+                  <div class="tpl-avatar" style="background:#6366f1"></div>
+                  <div class="tpl-bar big" style="background:#6366f1"></div>
+                  <div class="tpl-bar" style="background:rgba(255,255,255,0.2)"></div>
+                  <div class="tpl-bar short" style="background:rgba(255,255,255,0.15)"></div>
+                  <div class="tpl-divider" style="background:#6366f1"></div>
+                  <div class="tpl-bar" style="background:rgba(255,255,255,0.2)"></div>
+                  <div class="tpl-bar short" style="background:rgba(255,255,255,0.15)"></div>
+                </div>
+              </div>
+              <div class="template-info">
+                <div>
+                  <div class="tpl-name">Nova</div>
+                  <div class="tpl-style text-muted">Modern</div>
+                </div>
+                <div class="tpl-dot" style="background:#6366f1"></div>
+              </div>
+            </div>
+            <div class="template-card" data-id="2">
+              <div class="template-preview" style="background:#f8fffe">
+                <div class="tpl-mock">
+                  <div class="tpl-avatar" style="background:#10b981"></div>
+                  <div class="tpl-bar big" style="background:#10b981"></div>
+                  <div class="tpl-bar" style="background:rgba(0,0,0,0.15)"></div>
+                  <div class="tpl-bar short" style="background:rgba(0,0,0,0.1)"></div>
+                  <div class="tpl-divider" style="background:#10b981"></div>
+                  <div class="tpl-bar" style="background:rgba(0,0,0,0.15)"></div>
+                  <div class="tpl-bar short" style="background:rgba(0,0,0,0.1)"></div>
+                </div>
+              </div>
+              <div class="template-info">
+                <div>
+                  <div class="tpl-name">Clarity</div>
+                  <div class="tpl-style text-muted">Minimal</div>
+                </div>
+                <div class="tpl-dot" style="background:#10b981"></div>
+              </div>
+            </div>
+            <div class="template-card" data-id="3">
+              <div class="template-preview" style="background:#0a0f1e">
+                <div class="tpl-mock">
+                  <div class="tpl-avatar" style="background:#3b82f6"></div>
+                  <div class="tpl-bar big" style="background:#3b82f6"></div>
+                  <div class="tpl-bar" style="background:rgba(255,255,255,0.2)"></div>
+                  <div class="tpl-bar short" style="background:rgba(255,255,255,0.15)"></div>
+                  <div class="tpl-divider" style="background:#3b82f6"></div>
+                  <div class="tpl-bar" style="background:rgba(255,255,255,0.2)"></div>
+                  <div class="tpl-bar short" style="background:rgba(255,255,255,0.15)"></div>
+                </div>
+              </div>
+              <div class="template-info">
+                <div>
+                  <div class="tpl-name">Apex</div>
+                  <div class="tpl-style text-muted">Corporate</div>
+                </div>
+                <div class="tpl-dot" style="background:#3b82f6"></div>
+              </div>
+            </div>
+            <div class="template-card" data-id="4">
+              <div class="template-preview" style="background:#1a0f00">
+                <div class="tpl-mock">
+                  <div class="tpl-avatar" style="background:#f59e0b"></div>
+                  <div class="tpl-bar big" style="background:#f59e0b"></div>
+                  <div class="tpl-bar" style="background:rgba(255,255,255,0.2)"></div>
+                  <div class="tpl-bar short" style="background:rgba(255,255,255,0.15)"></div>
+                  <div class="tpl-divider" style="background:#f59e0b"></div>
+                  <div class="tpl-bar" style="background:rgba(255,255,255,0.2)"></div>
+                  <div class="tpl-bar short" style="background:rgba(255,255,255,0.15)"></div>
+                </div>
+              </div>
+              <div class="template-info">
+                <div>
+                  <div class="tpl-name">Vivid</div>
+                  <div class="tpl-style text-muted">Creative</div>
+                </div>
+                <div class="tpl-dot" style="background:#f59e0b"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:24px">
+            <h3 style="margin:0 0 16px;font-size:15px;font-weight:700">Color Customization</h3>
+            <div class="color-picker">
+              <button class="color-swatch" style="background:#6366f1"></button>
+              <button class="color-swatch" style="background:#10b981"></button>
+              <button class="color-swatch" style="background:#f59e0b"></button>
+              <button class="color-swatch" style="background:#ef4444"></button>
+              <button class="color-swatch" style="background:#8b5cf6"></button>
+              <button class="color-swatch" style="background:#06b6d4"></button>
+              <button class="color-swatch" style="background:#f97316"></button>
+              <button class="color-swatch" style="background:#ec4899"></button>
+              <label class="color-custom">
+                <input type="color" value="#7c6fef" />
+                <span class="text-muted">Custom</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- AI TOOLS PAGE -->
+        <section class="page" id="page-ai">
+          <h2 class="page-heading">AI Tools</h2>
+          <p class="text-muted">Supercharge your resume with intelligent AI assistance.</p>
+
+          <div class="ai-grid">
+
+            <div class="card ai-card">
+              <div class="ai-card-header">
+                <div class="ai-icon purple">✦</div>
+                <div>
+                  <div class="ai-title">Professional Summary</div>
+                  <div class="ai-sub text-muted">AI-generated bio</div>
+                </div>
+              </div>
+              <textarea rows="4" placeholder="Paste your experience or let AI write from scratch..."></textarea>
+              <button class="btn btn-ai" id="aiSummaryBtn">✦ Generate Summary</button>
+              <div class="ai-result" id="aiSummaryResult"></div>
+            </div>
+
+            <div class="card ai-card">
+              <div class="ai-card-header">
+                <div class="ai-icon amber">◎</div>
+                <div>
+                  <div class="ai-title">JD Optimizer</div>
+                  <div class="ai-sub text-muted">Match CV to job description</div>
+                </div>
+              </div>
+              <textarea rows="4" placeholder="Paste the job description here..."></textarea>
+              <button class="btn btn-amber" id="aiJdBtn">⟳ Optimize for this Job</button>
+              <div class="ai-result" id="aiJdResult"></div>
+            </div>
+
+            <div class="card ai-card">
+              <div class="ai-card-header">
+                <div class="ai-icon green">✎</div>
+                <div>
+                  <div class="ai-title">Grammar & Tone</div>
+                  <div class="ai-sub text-muted">Improve writing quality</div>
+                </div>
+              </div>
+              <textarea rows="4" placeholder="Paste any section to improve grammar and tone..."></textarea>
+              <button class="btn btn-green" id="aiGrammarBtn">✎ Improve Writing</button>
+              <div class="ai-result" id="aiGrammarResult"></div>
+            </div>
+
+            <div class="card ai-card">
+              <div class="ai-card-header">
+                <div class="ai-icon red">◇</div>
+                <div>
+                  <div class="ai-title">Skill Suggestions</div>
+                  <div class="ai-sub text-muted">AI-recommended skills</div>
+                </div>
+              </div>
+              <p class="text-muted small">Based on your profile &amp; target role:</p>
+              <div class="skills-suggestions ai-skills" id="aiSkillsSuggestions"></div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PORTFOLIO PAGE -->
+        <section class="page" id="page-portfolio">
+          <div class="page-header-row">
+            <div>
+              <h2 class="page-heading" style="margin-bottom:4px">Portfolio Website</h2>
+              <p class="text-muted">Your auto-generated portfolio is live and ready.</p>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-ghost">⚙ Customize</button>
+              <button class="btn btn-primary">↗ Visit Portfolio</button>
+            </div>
+          </div>
+
+          <div class="card url-bar">
+            <div class="portfolio-url">cvforge.ai/u/ahmed-khan</div>
+            <button class="btn btn-ghost" id="copyUrlBtn">⧉ Copy</button>
+            <div class="live-badge green">● Live</div>
+          </div>
+
+          <div class="portfolio-sections">
+            <div class="portfolio-section-item">
+              <div class="ps-left">
+                <span class="ps-icon accent-purple">◉</span>
+                <div>
+                  <div class="ps-title">Hero / About</div>
+                  <div class="ps-desc text-muted">Name, title, bio, and your professional photo</div>
+                </div>
+              </div>
+              <div class="toggle on" data-on="true"></div>
+            </div>
+            <div class="portfolio-section-item">
+              <div class="ps-left">
+                <span class="ps-icon accent-purple">◈</span>
+                <div>
+                  <div class="ps-title">Projects Showcase</div>
+                  <div class="ps-desc text-muted">Showcase your best work with descriptions and links</div>
+                </div>
+              </div>
+              <div class="toggle on" data-on="true"></div>
+            </div>
+            <div class="portfolio-section-item">
+              <div class="ps-left">
+                <span class="ps-icon accent-purple">◇</span>
+                <div>
+                  <div class="ps-title">Skills Section</div>
+                  <div class="ps-desc text-muted">Visual representation of your technical skills</div>
+                </div>
+              </div>
+              <div class="toggle on" data-on="true"></div>
+            </div>
+            <div class="portfolio-section-item">
+              <div class="ps-left">
+                <span class="ps-icon accent-purple">✉</span>
+                <div>
+                  <div class="ps-title">Contact Form</div>
+                  <div class="ps-desc text-muted">Let visitors reach out to you directly</div>
+                </div>
+              </div>
+              <div class="toggle on" data-on="true"></div>
+            </div>
+            <div class="portfolio-section-item">
+              <div class="ps-left">
+                <span class="ps-icon accent-purple">⌘</span>
+                <div>
+                  <div class="ps-title">Social Media Links</div>
+                  <div class="ps-desc text-muted">GitHub, LinkedIn, Twitter, and more</div>
+                </div>
+              </div>
+              <div class="toggle on" data-on="true"></div>
+            </div>
+            <div class="portfolio-section-item">
+              <div class="ps-left">
+                <span class="ps-icon">✎</span>
+                <div>
+                  <div class="ps-title">Blog / Articles</div>
+                  <div class="ps-desc text-muted">Share your thoughts and expertise</div>
+                </div>
+              </div>
+              <div class="toggle" data-on="false"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPORT PAGE -->
+        <section class="page" id="page-export">
+          <h2 class="page-heading">Export & Share</h2>
+          <p class="text-muted">Download, share, or publish your resume and portfolio.</p>
+
+          <div class="export-grid">
+            <div class="card export-card">
+              <div class="export-icon purple">⬇</div>
+              <div class="export-title">Download PDF</div>
+              <div class="export-desc text-muted">High-quality PDF ready for job applications. ATS-friendly formatting.</div>
+              <button class="btn export-btn purple-btn">Download PDF</button>
+            </div>
+            <div class="card export-card">
+              <div class="export-icon green">◉</div>
+              <div class="export-title">Print Resume</div>
+              <div class="export-desc text-muted">Open print dialog with optimized layout for A4 paper.</div>
+              <button class="btn export-btn green-btn" onclick="window.print()">Print Now</button>
+            </div>
+            <div class="card export-card">
+              <div class="export-icon amber">↗</div>
+              <div class="export-title">Share Link</div>
+              <div class="export-desc text-muted">Generate a shareable link to your online resume.</div>
+              <button class="btn export-btn amber-btn">Get Share Link</button>
+            </div>
+            <div class="card export-card">
+              <div class="export-icon violet">⌘</div>
+              <div class="export-title">Portfolio URL</div>
+              <div class="export-desc text-muted">Share your full portfolio website with one click.</div>
+              <button class="btn export-btn violet-btn">Copy URL</button>
+            </div>
+            <div class="card export-card">
+              <div class="export-icon cyan">◈</div>
+              <div class="export-title">Export JSON</div>
+              <div class="export-desc text-muted">Export your resume data for backup or transfer.</div>
+              <button class="btn export-btn cyan-btn" id="exportJsonBtn">Export Data</button>
+            </div>
+            <div class="card export-card">
+              <div class="export-icon blue">✦</div>
+              <div class="export-title">LinkedIn Import</div>
+              <div class="export-desc text-muted">Sync your LinkedIn profile to pre-fill resume fields.</div>
+              <button class="btn export-btn blue-btn">Connect LinkedIn</button>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:20px">
+            <h3 style="margin:0 0 16px;font-size:15px;font-weight:700">Download History</h3>
+            <div class="history-item">
+              <div class="history-left">
+                <span class="accent-purple" style="font-size:18px">◈</span>
+                <div>
+                  <div class="history-name">Software_Engineer_CV.pdf</div>
+                  <div class="history-meta text-muted">May 24, 2026 · 342 KB</div>
+                </div>
+              </div>
+              <button class="btn btn-ghost">⬇ Re-download</button>
+            </div>
+            <div class="history-item">
+              <div class="history-left">
+                <span class="accent-purple" style="font-size:18px">◈</span>
+                <div>
+                  <div class="history-name">Full_Stack_Developer_CV.pdf</div>
+                  <div class="history-meta text-muted">May 20, 2026 · 318 KB</div>
+                </div>
+              </div>
+              <button class="btn btn-ghost">⬇ Re-download</button>
+            </div>
+            <div class="history-item" style="border:none">
+              <div class="history-left">
+                <span class="accent-purple" style="font-size:18px">◈</span>
+                <div>
+                  <div class="history-name">Frontend_Specialist_CV.pdf</div>
+                  <div class="history-meta text-muted">May 15, 2026 · 295 KB</div>
+                </div>
+              </div>
+              <button class="btn btn-ghost">⬇ Re-download</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
